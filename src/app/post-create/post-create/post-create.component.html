@@ -1,0 +1,26 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <p>
+      <mat-form-field>
+        <input matInput type="text" name="title" placeholder="Title" ngModel required minlength="4" #title="ngModel">
+        <mat-error *ngIf="title?.invalid">Please enter title with more than 4 characters.</mat-error>
+      </mat-form-field>
+    </p>
+    <mat-select placeholder="Select Category">
+      <mat-option value="Ukulele">Ukulele</mat-option>
+      <mat-option value="My Music">My Music</mat-option>
+    </mat-select>
+
+    <p>
+      <mat-form-field>
+          <input matInput type="text" placeholder="Content" name="content" ngModel required #content="ngModel">
+          <mat-error *ngIf="content?.invalid">Please enter content.</mat-error>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="accent" type="submit">
+      Save Post
+    </button>
+  </form>
+</mat-card>
+
+

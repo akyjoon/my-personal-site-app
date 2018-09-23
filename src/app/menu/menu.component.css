@@ -1,0 +1,6 @@
+.menu_home {
+  text-decoration: none;
+}
+.menu_home:visited {
+  color: inherit;
+}

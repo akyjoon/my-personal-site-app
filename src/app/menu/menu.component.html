@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <span><a routerLink="/" class="menu_home">Home</a></span>
+
+  <!--Music menu start-->
+  <button mat-button [matMenuTriggerFor]="music">
+    Music
+  </button>
+  <mat-menu #music="matMenu">
+    <button mat-menu-item routerLink="/ukulele">My Ukulele Vids</button>
+    <button mat-menu-item [matMenuTriggerFor]="myMusic" routerLink="/my-music">Music Made By Me</button>
+  </mat-menu>
+
+  <mat-menu #myMusic="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="cinematic">Cinematic</button>
+    <button mat-menu-item>Hip-Hop</button>
+    <button mat-menu-item>Happy</button>
+    <button mat-menu-item>Motivational</button>
+  </mat-menu>
+  <mat-menu #cinematic="matMenu">
+    <button mat-menu-item>Orchestral</button>
+    <button mat-menu-item>Hybrid Trailer</button>
+  </mat-menu>
+  <!--Music menu end-->
+
+  <!--Code menu start-->
+  <button mat-button [matMenuTriggerFor]="code">
+      Code
+  </button>
+  <mat-menu #code="matMenu">
+    <button mat-menu-item>My Portfolio</button>
+  </mat-menu>
+  <!--Code menu end-->
+
+  <button mat-button routerLink="/create-post">
+    Create Post
+  </button>
+</mat-toolbar>
+
+
