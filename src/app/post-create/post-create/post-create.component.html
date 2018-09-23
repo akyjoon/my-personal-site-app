@@ -6,7 +6,7 @@
         <mat-error *ngIf="title?.invalid">Please enter title with more than 4 characters.</mat-error>
       </mat-form-field>
     </p>
-    <mat-select placeholder="Select Category">
+    <mat-select placeholder="Select Category" name="category" ngModel #category="ngModel">
       <mat-option value="Ukulele">Ukulele</mat-option>
       <mat-option value="My Music">My Music</mat-option>
     </mat-select>
@@ -17,10 +17,9 @@
           <mat-error *ngIf="content?.invalid">Please enter content.</mat-error>
       </mat-form-field>
     </p>
+    <quill-editor ngModel name="content2" #content2="ngModel"></quill-editor>
     <button mat-raised-button color="accent" type="submit">
       Save Post
     </button>
   </form>
 </mat-card>
-
-

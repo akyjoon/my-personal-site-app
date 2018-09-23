@@ -24,9 +24,9 @@ export class PostsService {
     // id: string,
     title: string,
     content: string,
-    // createDate: Date,
+    createDate: Date,
     // editDate: Date,
-    // category: ICategory,
+    category: ICategory,
     // subcategory?: ISubcategory,
     // subsubcategory?: ISubsubcategory,
     // tags?: string[]
@@ -35,9 +35,9 @@ export class PostsService {
         // _id: id,
         Title: title,
         Content: content,
-        // CreateDate: createDate,
+        CreateDate: createDate,
         // EditDate: editDate,
-        // Category: category,
+        Category: category
         // Subcategory: subcategory,
         // Subsubcategory: subsubcategory,
         // Tags: tags

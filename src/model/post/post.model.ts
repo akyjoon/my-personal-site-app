@@ -5,10 +5,10 @@ export interface IPost {
   // _id: string;
   Title: string;
   Content: string;
-  // Category: ICategory;
+  Category: ICategory;
   // Subcategory?: ISubcategory;
   // Subsubcategory?: ISubsubcategory;
   // Tags?: string[];
-  // CreateDate: Date;
+  CreateDate: Date;
   // EditDate?: Date;
 }
