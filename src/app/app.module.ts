@@ -16,7 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MyMusicComponent } from './my-music/my-music.component';
 import { PostCreateComponent } from './post-create/post-create/post-create.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { QuillModule } from 'ngx-quill';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +38,7 @@ import { QuillModule } from 'ngx-quill';
     MatAutocompleteModule,
     MatToolbarModule,
     MatInputModule,
-    MatSelectModule,
-    QuillModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

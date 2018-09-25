@@ -1,28 +1,38 @@
 import { PostsService } from './../../services/posts.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgForm } from '../../../../node_modules/@angular/forms';
 import { IPost } from './../../../model/post/post.model';
-import {QuillModule} from 'ngx-quill'
+import $ from 'jquery';
+declare var $: any;
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
   styleUrls: ['./post-create.component.css']
 })
-export class PostCreateComponent implements OnInit {
+export class PostCreateComponent implements OnInit, AfterViewInit{
   posts: IPost[] = [];
+  description;
 
   constructor(public postsService: PostsService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  ngAfterViewInit(){
+    $(document).ready(function() {
+      $('#summernote').summernote();
+    });
+
+  }
   onAddPost(postForm: NgForm) {
     if (postForm.invalid) {
       return;
     }
-    let date: Date = new Date(Date.now());
+    let cont = document.querySelector('#summernote').nextElementSibling.querySelector('.note-editable').innerHTML;
 
-    this.postsService.addPost(postForm.value.title, postForm.value.content, date, postForm.value.category,);
+    let date: Date = new Date(Date.now());
+    this.postsService.addPost(postForm.value.title, cont, date, postForm.value.category);
   }
 
 }
