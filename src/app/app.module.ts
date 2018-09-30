@@ -16,14 +16,19 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MyMusicComponent } from './my-music/my-music.component';
 import { PostCreateComponent } from './post-create/post-create/post-create.component';
 import { PostListComponent } from './post-list/post-list.component';
-
+import { SafeHtmlPipe } from './Pipes/html-sanitizer';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CategoryCreateComponent } from './category-create/category-create.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     MyMusicComponent,
     PostCreateComponent,
-    PostListComponent
+    PostListComponent,
+    SafeHtmlPipe,
+    CategoryCreateComponent
   ],
   imports: [
     AppRoutingModule,
@@ -38,7 +43,9 @@ import { PostListComponent } from './post-list/post-list.component';
     MatAutocompleteModule,
     MatToolbarModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

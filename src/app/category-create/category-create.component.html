@@ -1,0 +1,30 @@
+<mat-card>
+  <form (submit)="onAddCategory(categoryForm)" #categoryForm="ngForm">
+      <mat-form-field>
+        <input matInput type="text" 
+        name="categoryName" 
+        placeholder="Category" 
+        ngModel 
+        required 
+        #category="ngModel">
+      </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" 
+      name="subCategoryName" 
+      placeholder="Sub-category" 
+      ngModel
+      #subcategory="ngModel">
+    </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" 
+          name="subSubCategoryName" 
+          placeholder="Sub-sub-category" 
+          ngModel
+          #category="ngModel">
+        </mat-form-field>
+    <br>
+    <button mat-raised-button type="submit">
+      Save Category and Subs
+    </button>
+  </form>
+</mat-card>

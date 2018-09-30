@@ -1,5 +1,9 @@
-<mat-card *ngFor ="let post of posts">
-    <mat-card-title>{{post.Title}}</mat-card-title>
-    <mat-card-subtitle>{{post.Category}}</mat-card-subtitle>
-  <mat-card-content *ngFor ="let post of posts" innerHtml="{{post.Content}}"></mat-card-content>
-</mat-card>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="60%">
+    <mat-card *ngFor ="let post of posts">
+        <mat-card-title>{{post.Title}}</mat-card-title>
+        <mat-card-subtitle>{{post.Category}}</mat-card-subtitle>
+      <mat-card-content [innerHtml]="post.Content | safeHtml"></mat-card-content>
+    </mat-card>
+  </div>
+</div>

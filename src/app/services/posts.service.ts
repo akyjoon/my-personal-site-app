@@ -27,8 +27,8 @@ export class PostsService {
     createDate: Date,
     // editDate: Date,
     category: ICategory,
-    // subcategory?: ISubcategory,
-    // subsubcategory?: ISubsubcategory,
+    subcategory?: ISubcategory,
+    subsubcategory?: ISubsubcategory,
     // tags?: string[]
   ) {
       const post: IPost = {
@@ -37,7 +37,7 @@ export class PostsService {
         Content: content,
         CreateDate: createDate,
         // EditDate: editDate,
-        Category: category
+        Category: category,
         // Subcategory: subcategory,
         // Subsubcategory: subsubcategory,
         // Tags: tags

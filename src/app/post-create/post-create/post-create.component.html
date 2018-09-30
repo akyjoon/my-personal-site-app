@@ -1,3 +1,4 @@
+<app-category-create></app-category-create>
 <mat-card>
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <p>
@@ -6,9 +7,8 @@
         <mat-error *ngIf="title?.invalid">Please enter title with more than 4 characters.</mat-error>
       </mat-form-field>
     </p>
-    <mat-select placeholder="Select Category" name="category" ngModel #category="ngModel">
-      <mat-option value="Ukulele">Ukulele</mat-option>
-      <mat-option value="My Music">My Music</mat-option>
+    <mat-select placeholder="Select Category" name="category" ngModel #category="ngModel" *ngIf="categoryService.categories.length">
+      <mat-option *ngFor="let category of categoryService.categories" value="{{category.Name.value}}">{{category.name}}</mat-option>
     </mat-select>
 
     <!-- <ng2-summernote ngModel name="content" #content="ngModel" height="500"></ng2-summernote> -->
